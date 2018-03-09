@@ -71,9 +71,10 @@ var CurrencyMaskDirective = /** @class */ (function () {
         }
     };
     CurrencyMaskDirective.prototype.isChromeAndroid = function () {
-        return /chrome/i.test(navigator.userAgent)
-            && /android/i.test(navigator.userAgent)
-            && /mobile/i.test(navigator.userAgent); // check if it's on mobile
+        return false;
+        // return /chrome/i.test(navigator.userAgent)
+        //     && /android/i.test(navigator.userAgent)
+        //     && /mobile/i.test(navigator.userAgent);
     };
     CurrencyMaskDirective.prototype.registerOnChange = function (callbackFunction) {
         this.inputHandler.setOnModelChange(callbackFunction);
