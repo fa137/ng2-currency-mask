@@ -32,7 +32,7 @@ export class CurrencyMaskDirective implements AfterViewInit, ControlValueAccesso
         thousands: ","
     };
 
-    constructor( @Optional() @Inject(CURRENCY_MASK_CONFIG) private currencyMaskConfig: CurrencyMaskConfig, private elementRef: ElementRef, private keyValueDiffers: KeyValueDiffers) {
+    constructor(@Optional() @Inject(CURRENCY_MASK_CONFIG) private currencyMaskConfig: CurrencyMaskConfig, private elementRef: ElementRef, private keyValueDiffers: KeyValueDiffers) {
         if (currencyMaskConfig) {
             this.optionsTemplate = currencyMaskConfig;
         }
@@ -96,7 +96,9 @@ export class CurrencyMaskDirective implements AfterViewInit, ControlValueAccesso
     }
 
     isChromeAndroid(): boolean {
-        return /chrome/i.test(navigator.userAgent) && /android/i.test(navigator.userAgent);
+        return /chrome/i.test(navigator.userAgent)
+            && /android/i.test(navigator.userAgent)
+            && /mobile/i.test(navigator.userAgent); // check if it's on mobile
     }
 
     registerOnChange(callbackFunction: Function): void {
