@@ -96,9 +96,10 @@ export class CurrencyMaskDirective implements AfterViewInit, ControlValueAccesso
     }
 
     isChromeAndroid(): boolean {
-        return /chrome/i.test(navigator.userAgent)
-            && /android/i.test(navigator.userAgent)
-            && /mobile/i.test(navigator.userAgent); // check if it's on mobile
+        return false;
+        // return /chrome/i.test(navigator.userAgent)
+        //     && /android/i.test(navigator.userAgent)
+        //     && /mobile/i.test(navigator.userAgent);
     }
 
     registerOnChange(callbackFunction: Function): void {
